@@ -51,31 +51,31 @@ Vagrant.configure("2") do |config|
        
   end
   
-  config.vm.define "web02" do |vm3|
-
-    vm3.vm.box              = "generic/ubuntu1604"
-      vm3.vm.hostname         = "web02"
-      vm3.vm.box_check_update = true
-  
-      vm3.vm.network :private_network,
-                      ip: '192.168.10.30',
-                      libvirt_netmask: '255.255.255.0',
-                      libvirt__network_name: 'puppet-lab',
-                      autostart: true,
-                      ## libvirt__domain_name: 'example.local',
-                      libvirt__forward_mode: 'route',
-                      libvirt__dhcp_enabled: false  
-  
-      vm3.vm.provision "shell", :inline => <<-SHELL      
-        sudo /usr/sbin/adduser --disabled-password --shell /bin/bash --gecos "User" puppet
-        sudo mkdir -p /home/puppet/.ssh/
-        sudo touch /home/puppet/.ssh/authorized_keys
-        sudo echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbDPM12GUdwKTA5t6/wNZ+kzDAh+qVK9p4GvS+7NNNMNjvyw+T03FXUtFqNSKVJeKGL9mox3AgblwzJYHhmEsYYrDavVgAvP3lGZeFdTA5drjqMB9q9TDqfS+g+eVjnPpjS2ehWPpsZAwVGbGxF7x86MMjBkUkGEbPWkI4fG76CawBM4ydSS/cf60eoRAdTe0tpHfJBOXbDegoTGuWAsnv+FGiRg/OxpSR9/QP35loRwVD3duMl7tbyvLx8U1tK9aWM6KbyTHD2QEjls8veBttXx4GttAhQgsbRBfidsAch5x6/aHatjRCE+jVZ86Tl/02JqG8lauAg2ppJgVyblVh puppet" | sudo tee -a /home/puppet/.ssh/authorized_keys
-        sudo touch /etc/sudoers.d/10_puppet
-        sudo echo "puppet ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/10_puppet
-
-      SHELL
-       
-  end
+#  config.vm.define "web02" do |vm3|
+#
+#    vm3.vm.box              = "generic/ubuntu1604"
+#      vm3.vm.hostname         = "web02"
+#      vm3.vm.box_check_update = true
+#  
+#      vm3.vm.network :private_network,
+#                      ip: '192.168.10.30',
+#                      libvirt_netmask: '255.255.255.0',
+#                      libvirt__network_name: 'puppet-lab',
+#                      autostart: true,
+#                      ## libvirt__domain_name: 'example.local',
+#                      libvirt__forward_mode: 'route',
+#                      libvirt__dhcp_enabled: false  
+#  
+#      vm3.vm.provision "shell", :inline => <<-SHELL      
+#        sudo /usr/sbin/adduser --disabled-password --shell /bin/bash --gecos "User" puppet
+#        sudo mkdir -p /home/puppet/.ssh/
+#        sudo touch /home/puppet/.ssh/authorized_keys
+#        sudo echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbDPM12GUdwKTA5t6/wNZ+kzDAh+qVK9p4GvS+7NNNMNjvyw+T03FXUtFqNSKVJeKGL9mox3AgblwzJYHhmEsYYrDavVgAvP3lGZeFdTA5drjqMB9q9TDqfS+g+eVjnPpjS2ehWPpsZAwVGbGxF7x86MMjBkUkGEbPWkI4fG76CawBM4ydSS/cf60eoRAdTe0tpHfJBOXbDegoTGuWAsnv+FGiRg/OxpSR9/QP35loRwVD3duMl7tbyvLx8U1tK9aWM6KbyTHD2QEjls8veBttXx4GttAhQgsbRBfidsAch5x6/aHatjRCE+jVZ86Tl/02JqG8lauAg2ppJgVyblVh puppet" | sudo tee -a /home/puppet/.ssh/authorized_keys
+#        sudo touch /etc/sudoers.d/10_puppet
+#        sudo echo "puppet ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/10_puppet
+#
+#      SHELL
+#       
+#  end
 
 end
