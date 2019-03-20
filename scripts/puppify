@@ -1,5 +1,5 @@
 #!/bin/bash
-PUPPET_REPO=https://github.com/jinostrozam/control-repo-3.git
+PUPPET_REPO=https://github.com/jinostrozam/masterless-puppet.git
 IDENTITY="-i /home/jaime/workspace/puppet/ssh-keys/puppet/id_rsa"
 if [ "$#" -lt 2 ]; then
   cat <<USAGE
