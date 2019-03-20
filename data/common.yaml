@@ -1,22 +1,24 @@
 ---
   users:
-    'john':
-      comment: 'John Arundel'
+    'carlos':
+      comment: 'Carlos Albornoz'
       uid: '1010'
       sshkeys:
-        - 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA3ATqENg+GWACa2BzeqTdGnJhNoBer8x6pfWkzNzeM8Zx7/2Tf2pl7kHdbsiTXEUawqzXZQtZzt/j3Oya+PZjcRpWNRzprSmd2UxEEPTqDw9LqY5S2B8og/NyzWaIYPsKoatcgC7VgYHplcTbzEhGu8BsoEVBGYu3IRy5RkAcZik= john@susie'
-    'bridget':
-      comment: 'Bridget X. Zample'
+        - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDT0IE26dvjtlPLXOwP14OmI4fMnfawJgi/O19xFRGJNoIy0nmtj35bi0qa66Xqvnbs2NqipSB/fwbt2dDt4CIJKNljNzvZZz+KCNoG6YxrZv1KvY8EoQugAGUZDTrab70sk+qhLx1MLScCVr2PakuCyJmxqEbapnhoa3Z/vPiXlAyVL1R1ncAFVsx2eodH+8Mn2Uko5nWaIPryW285tx8NkFbzxiaO8RpFkjJucVb/Ap32pVRfQhLi3T9TCWsFWKqww8vEVmbyxh6UAVc86VnTW0djiY8b8sbv+ObFBsrM4T4KHuIkFFN8+iwxGFc5JCGDigIpYsgMVHX/DcuZ8gJV carlos'
+    'jorge':
+      comment: 'Jorge Molina'
       uid: '1011'
       sshkeys:
-        - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiTvHgzkf9TGBIpnIUBRbsWaRNBqzrLY/OoQpzqprGFLuTzzb8MaGI9Q6GPIhil5HyXE7PWPyuwcBA4mJhIHBXWqQC5o59cdtrkgJwAybSK7z5oVt67B0qieDG/cbasxr52nMAJC3dBEF4W1s69VSq5+wLFD01iW= bridget'
+        - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1IvXl3fvtP+3Y3G5le5Xdt2lvGbnTkrRfuM856pfVuciEZiTOtObD2otlLCFg48lQSb4acONTgeObSphcYPz98f5sIASASvZ6BVBDu6yGLfu6MTbA5nkMpnU18iZj+XejHLTgcJ7dw4jSs3bD1SLd2q0vwpuh+CdIUQorPRFY4a/wXZ2wMcPEtNZciq4fhE1zJCEYl+JC2Tzto1uOQ5YbI7VpvGZVLrtA4IkxGL5Ni7h/0u40huLl3xJJbCTN4zzYaX5kSzV40cFZaAnRMhVa/IAzx00JO9P95JBnQqxqedSYwcnUZKGPNimKVZUjHxOO9/QWLUlmfWilrLiVFfJR jorge'
   allow_users:
-    - 'john'
-    - 'bridget'
+    - 'carlos'
+    - 'jorge'
+    - 'vagrant'
     - 'ubuntu'
   sudoers:
-    - 'john'
-    - 'bridget'
+    - 'carlos'
+    - 'jorge'
+    - 'vagrant'
     - 'ubuntu'
   classes:
     - profile::ntp

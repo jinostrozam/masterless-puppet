@@ -1,0 +1,22 @@
+---
+  classes:
+    - role::web01
+  users:
+    'jaime':
+      comment: 'Jaime Inostroza'
+      uid: '1010'
+      sshkeys:
+        - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbIHossqrko3xeceW52Tf4F1CLjvlcJ385lfVoIIYFPUxhwot/ew7Qb3wCHwWQ57ywSToX/T1ivPlBHvmTuoAkFBMBhrdaWrNL4NcRAIpWsnYkGUrLbltFL+kf8ZaBdlPniQiXu6jqHg7TSpyAZCi2sjHDtVW9QRCULAnWzByJIHN/n6/5FvyeWCfu7BsoCIz3l20Pw756UCmMzj3iemlJtBvyCP/2gSTFImcDI9r4XlHJh3wGlCVe7vHnNDF9xvzAcxYNWb83zJo1NdYkX9SPdtN4BJMV7pPLtXE5dm5XPSpJ8pb0wV2gQXhlVlPkKnnA/fx+DlLqOcgRB5881ZML jaime'
+  allow_users:
+    - 'jaime'
+    - 'vagrant'
+  sudoers:
+    - 'jaime'
+    - 'vagrant'
+  classes:
+    - profile::ntp
+    - profile::puppet
+    - profile::ssh
+    - profile::sudoers
+    - profile::timezone
+    - profile::users
