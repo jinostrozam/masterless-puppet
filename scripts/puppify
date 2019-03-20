@@ -1,6 +1,6 @@
 #!/bin/bash
 PUPPET_REPO=https://github.com/jinostrozam/control-repo-3.git
-IDENTITY="-i /home/jaime/workspace/puppet/ssh-keys/carlos/id_rsa"
+IDENTITY="-i /home/jaime/workspace/puppet/ssh-keys/puppet/id_rsa"
 if [ "$#" -lt 2 ]; then
   cat <<USAGE
 Usage: $0 TARGET HOSTNAME [BRANCH]
@@ -15,8 +15,8 @@ HOSTNAME=${2}
 BRANCH=${3:-production}
 OPTIONS="-oStrictHostKeyChecking=no"
 echo -n "Copying bootstrap script... "
-scp ${IDENTITY} ${OPTIONS} $(dirname $0)/bootstrap.sh carlos@${TARGET}:/tmp
+scp ${IDENTITY} ${OPTIONS} $(dirname $0)/bootstrap.sh puppet@${TARGET}:/tmp
 echo "done."
 echo -n "Bootstrapping... "
-ssh ${IDENTITY} ${OPTIONS} carlos@${TARGET} "sudo bash /tmp/bootstrap.sh ${PUPPET_REPO} ${HOSTNAME} ${BRANCH}"
+ssh ${IDENTITY} ${OPTIONS} puppet@${TARGET} "sudo bash /tmp/bootstrap.sh ${PUPPET_REPO} ${HOSTNAME} ${BRANCH}"
 echo "done."
