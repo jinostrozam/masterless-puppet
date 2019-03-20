@@ -49,6 +49,9 @@ Vagrant.configure("2") do |config|
         sudo mkdir -p /home/carlos/.ssh/
         sudo touch /home/carlos/.ssh/authorized_keys
         sudo echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDT0IE26dvjtlPLXOwP14OmI4fMnfawJgi/O19xFRGJNoIy0nmtj35bi0qa66Xqvnbs2NqipSB/fwbt2dDt4CIJKNljNzvZZz+KCNoG6YxrZv1KvY8EoQugAGUZDTrab70sk+qhLx1MLScCVr2PakuCyJmxqEbapnhoa3Z/vPiXlAyVL1R1ncAFVsx2eodH+8Mn2Uko5nWaIPryW285tx8NkFbzxiaO8RpFkjJucVb/Ap32pVRfQhLi3T9TCWsFWKqww8vEVmbyxh6UAVc86VnTW0djiY8b8sbv+ObFBsrM4T4KHuIkFFN8+iwxGFc5JCGDigIpYsgMVHX/DcuZ8gJV carlos@ubuntu1604.localdomain" | sudo tee -a /home/carlos/.ssh/authorized_keys
+        sudo touch /etc/sudoers.d/10_carlos
+        sudo echo "carlos ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/10_carlos
+
       SHELL
 
     ### vm2.vm.synced_folder ".", "/etc/puppetlabs/code/environments/production"
